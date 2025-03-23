@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <link
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#landing-page"> </a>
+      <button
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="navbar-toggler"
+        data-bs-target="#navbarNav"
+        data-bs-toggle="collapse"
+        type="button"
+      >
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"> </i>
+        </span>
+      </button>
+    </nav>
+    <div class="container">
+      <div class="text-center">
+        <img
+          alt="Artistic brush stroke image"
+          class="mb-4"
+          height="100"
+          src="./img/Logo.png"
+          width="100"
+        />
+      </div>
+      <div class="welcome-text">Welcome back!</div>
+      <form>
+        <input class="form-control" placeholder="username" type="text" />
+        <input class="form-control" placeholder="password" type="password" />
+        <a href="index.html">
+          <button class="btn btn-login" type="submit">Login</button>
+        </a>
+      </form>
+      <div class="forgot-password">
+        <a href="#"> Forgot password? </a>
+      </div>
+      <div class="social-buttons">
+        <button class="btn btn-outline-primary">
+          <i class="fab fa-facebook-f"> </i>
+          Sign in
+        </button>
+        <button class="btn btn-outline-danger">
+          <i class="fab fa-google"> </i>
+          Sign in
+        </button>
+      </div>
+      <div class="signup-text">
+        Don't have an account yet?
+        <a href="signup.html"> Sign Up </a>
+      </div>
+    </div>
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+Y4R9o+Pp1Kti0KV+1QG8hb5K5i5M"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <style>
+      body {
+               background-color: #f5e6d3;
+               font-family: 'Arial', sans-serif;
+           }
+           .navbar {
+               background-color: #f5e6d3;
+               padding: 1rem;
+           }
+           .navbar-brand {
+               font-size: 1.5rem;
+               color: #a67c52;
+           }
+           .navbar-toggler {
+               border: none;
+           }
+           .navbar-toggler-icon {
+               color: #a67c52;
+           }
+           .container {
+               max-width: 400px;
+               margin-top: 50px;
+           }
+           .welcome-text {
+               font-size: 2rem;
+               color: #a67c52;
+               text-align: center;
+               margin-bottom: 20px;
+           }
+           .form-control {
+               border: none;
+               border-bottom: 1px solid #a67c52;
+               border-radius: 0;
+               background-color: #f5e6d3;
+               margin-bottom: 20px;
+           }
+           .btn-login {
+               background-color: #a67c52;
+               color: white;
+               width: 100%;
+               margin-bottom: 10px;
+           }
+           .forgot-password {
+               text-align: center;
+               color: #a67c52;
+               margin-bottom: 20px;
+           }
+           .social-buttons {
+               text-align: center;
+               margin-bottom: 20px;
+           }
+           .social-buttons .btn {
+               margin: 5px;
+               width: 45%;
+           }
+           .signup-text {
+               text-align: center;
+               color: #a67c52;
+           }
+    </style>
+    <script>
+      function validateLoginForm(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          const username = document.querySelector('input[placeholder="username"]').value;
+          const password = document.querySelector('input[placeholder="password"]').value;
+
+          // Basic validation (you can expand this as needed)
+          if (username === '' || password === '') {
+              alert('Both fields are required!');
+              return false;
+          }
+
+          // If validation passes, redirect to the landing page
+          console.log("Validation passed. Redirecting to #landing-page");
+          window.location.href = '#index.html';
+          return true;
+      }
+
+      // Attach the validateLoginForm function to the form's submit event
+      document.addEventListener('DOMContentLoaded', function() {
+          const form = document.querySelector('form');
+          form.onsubmit = validateLoginForm;
+      });
+    </script>
+  </body>
+</html>

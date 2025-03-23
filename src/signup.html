@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Artists</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <link
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Street Artists</div>
+      <div class="image-container">
+        <img
+          alt="Abstract yellow brush stroke"
+          height="50"
+          src="./img/Logo.png"
+          width="50"
+        />
+      </div>
+      <h2>Thank you!</h2>
+      <form>
+        <input class="form-control" placeholder="phone number" type="text" />
+        <input class="form-control" placeholder="username" type="text" />
+        <input class="form-control" placeholder="password" type="password" />
+        <button class="btn btn-primary" type="submit">Sign up</button>
+      </form>
+      <p>By signing up, you agree to our Terms</p>
+      <div class="social-buttons">
+        <button class="btn btn-primary">
+          <i class="fab fa-facebook-f"> </i>
+          Sign up
+        </button>
+        <button class="btn btn-warning">
+          <i class="fab fa-google"> </i>
+          Sign up
+        </button>
+      </div>
+      <div class="footer">
+        <p>
+          Already have an account?
+          <a href="signin.html"> Sign in </a>
+        </p>
+      </div>
+    </div>
+
+    <style>
+       body {
+               background-color: #f5e6d3;
+               font-family: 'Arial', sans-serif;
+           }
+      .container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding-top: 50px;
+          text-align: center;
+      }
+      .header {
+          font-size: 24px;
+          margin-bottom: 20px;
+      }
+      .image-container {
+          margin-bottom: 20px;
+      }
+      .image-container img {
+          width: 50px;
+          height: 50px;
+      }
+      .form-control {
+          background-color: #e6cbb8;
+          border: none;
+          border-bottom: 1px solid #000;
+          border-radius: 0;
+          margin-bottom: 20px;
+      }
+      .btn-primary {
+          background-color: #8b5e3c;
+          border: none;
+          width: 100%;
+          margin-bottom: 20px;
+      }
+      .social-buttons .btn {
+          width: 48%;
+          margin: 1%;
+      }
+      .social-buttons .btn-primary {
+          background-color: #3b5998;
+      }
+      .social-buttons .btn-warning {
+          background-color: #dd4b39;
+      }
+      .footer {
+          margin-top: 20px;
+      }
+    </style>
+    <script>
+      function validateSignUpForm(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          const phoneNumber = document.querySelector('input[placeholder="phone number"]').value;
+          const username = document.querySelector('input[placeholder="username"]').value;
+          const password = document.querySelector('input[placeholder="password"]').value;
+
+          // Basic validation
+          if (phoneNumber === '' || username === '' || password === '') {
+              alert('All fields are required!');
+              return false;
+          }
+
+          // Additional validation for phone number (optional)
+          const phoneRegex = /^[0-9]{10}$/; // Example: validate for 10-digit phone numbers
+          if (!phoneRegex.test(phoneNumber)) {
+              alert('Please enter a valid 10-digit phone number.');
+              return false;
+          }
+
+          // If validation passes
+          console.log("Validation passed. Form is ready to be submitted.");
+          // Here you can proceed with form submission or additional actions
+          // For demonstration, we will just alert success
+          alert('Sign up successful!');
+          return true;
+      }
+
+      // Attach the validateSignUpForm function to the form's submit event
+      document.addEventListener('DOMContentLoaded', function() {
+          const form = document.querySelector('form');
+          form.onsubmit = validateSignUpForm;
+      });
+    </script>
+  </body>
+</html>
